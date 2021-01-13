@@ -1,0 +1,11 @@
+/.idea/*
+/tmp/
+src/config.local.php
+/node_modules/
+/public/build/
+yarn.lock
+/package-lock.json
+yarn-error.log
+/public/sitemap.xml
+/vendor/
+/www/*
