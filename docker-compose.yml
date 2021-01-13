@@ -14,8 +14,6 @@ services:
     image: mariadb:latest
     container_name: ${APP_NAME:?err}-db
     restart: 'always'
-    depends_on:
-      - php
     ports:
       - 37060:3306
     environment:
@@ -75,7 +73,7 @@ services:
       dockerfile: ./docker/composer.Dockerfile
     volumes:
       - ./www/:/var/www/html
-    command: bash -c "composer install --no-scripts --no-autoloader --ignore-platform-reqs && composer dump-autoload"
+    command: bash -c "composer install --no-scripts --no-autoloader --no-plugins --ignore-platform-reqs && composer dump-autoload"
 
 
 volumes:
