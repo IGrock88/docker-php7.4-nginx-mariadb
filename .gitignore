@@ -11,3 +11,5 @@ yarn-error.log
 /www/*
 /java/*
 .env
+/java
+www
