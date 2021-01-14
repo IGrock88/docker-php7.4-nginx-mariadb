@@ -9,4 +9,5 @@ yarn-error.log
 /public/sitemap.xml
 /vendor/
 /www/*
+/java/*
 .env
