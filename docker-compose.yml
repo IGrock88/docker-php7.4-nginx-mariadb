@@ -2,7 +2,7 @@ version: '3'
 services:
   java:
     container_name: ${APP_NAME:?err}-java
-    #restart: 'always'
+    restart: 'always'
     ports:
       - 12500:11111
     links:

@@ -18,7 +18,7 @@ RUN apt-get update && apt-get install -y \
 		libcurl4-openssl-dev \
 		libxml2-dev \
 		libmagickwand-dev \
-    && docker-php-ext-install -j$(nproc) gettext iconv mbstring mysqli pdo_mysql zip bcmath curl json opcache phar session soap sockets zip \
+    && docker-php-ext-install -j$(nproc) gettext iconv mbstring mysqli pdo_mysql zip bcmath gd curl json opcache phar session soap sockets zip \
 	&& pecl install memcached \
 	&& pecl install imagick \
 	&& docker-php-ext-enable memcached \
