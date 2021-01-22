@@ -47,7 +47,6 @@ services:
       - ./www/:/var/www/html
 
   php:
-    # image: 'php:7.2-fpm'
     restart: 'always'
     links:
       - mariadb
