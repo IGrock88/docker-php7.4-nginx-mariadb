@@ -14,7 +14,6 @@ services:
       - ./java/logs:/var/java/app/target/logs
 
   webpack:
-    image: node-latest
     container_name: ${APP_NAME:?err}-webpack
     build:
       context: .
@@ -24,7 +23,7 @@ services:
     command: bash -c "yarn install && yarn build"
 
   mariadb:
-    image: mariadb:latest
+    image: mariadb:10.5.8
     container_name: ${APP_NAME:?err}-db
     restart: 'always'
     ports:
@@ -59,7 +58,7 @@ services:
       - './www/:/var/www/html'
 
   nginx:
-    image: nginx:latest
+    image: nginx:1.19.6-alpine
     restart: 'always'
     container_name: ${APP_NAME:?err}-nginx
     ports:
