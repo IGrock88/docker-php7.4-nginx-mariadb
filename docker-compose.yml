@@ -74,7 +74,7 @@ services:
       - './config/nginx/conf:/etc/nginx/conf.d/'
 
   composer_installation:
-    container_name: composer_installation
+    container_name: ${APP_NAME:?err}-composer
     build:
       context: .
       dockerfile: ./docker/composer.Dockerfile
