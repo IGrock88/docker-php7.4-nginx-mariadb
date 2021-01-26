@@ -34,7 +34,7 @@ services:
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?err}
       MARIADB_DATABASE: check_printer_admin
     volumes:
-      - mariadb_data:/var/lib/mysql
+      - mariadb_check_printer_data:/var/lib/mysql
 
   memcache:
     container_name: ${APP_NAME:?err}-memcached
@@ -84,6 +84,6 @@ services:
 
 
 volumes:
-  mariadb_data:
+  mariadb_check_printer_data:
     external: true
 
