@@ -35,7 +35,6 @@ services:
       MARIADB_DATABASE: check_printer_admin
     volumes:
       - check_printer_data:/var/lib/mysql
-    command: --skip-grant-tables --general-log
 
   memcache:
     container_name: ${APP_NAME:?err}-memcached
