@@ -23,7 +23,7 @@ services:
     command: bash -c "yarn install && yarn ${WEBPACK_START_MODE:?build}"
 
   mariadb:
-    image: mariadb:10.3
+    image: mariadb:10.5.8
     container_name: ${APP_NAME:?err}-db
     restart: 'always'
     ports:
