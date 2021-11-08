@@ -82,6 +82,19 @@ services:
       - ./www/:/var/www/html
     command: bash -c "composer install --no-scripts --no-autoloader --no-plugins --ignore-platform-reqs && composer dump-autoload"
 
+#  mailer:
+#    image: ${APP_NAME:?err}-imixs/exim4:latest
+#    container_name: ${APP_NAME:?err}-mailer
+#    restart: always
+#    #build:
+#    #  context: .
+#    environment:
+#      EXIM_SMARTHOST: smtp.yandex.ru:465
+#      EXIM_PASSWORD: smtp.yandex.ru:${MAILER_LOGIN:?err}:${MAILER_PASSWORD:?err}
+#      EXIM_ALLOWED_SENDERS: 172.18.0.0/24:127.0.0.1
+#    volumes:
+#      - ./var/log/exim4:/var/log/exim4
+
 
 volumes:
   check_printer_data:
