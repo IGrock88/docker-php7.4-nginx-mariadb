@@ -20,7 +20,7 @@ services:
       dockerfile: ./docker/node.Dockerfile
     volumes:
       - ./www/:/var/www/html/
-    command: bash -c "yarn install && yarn ${WEBPACK_START_MODE:?build}"
+    command: bash -c "yarn install && yarn ${WEBPACK_START_MODE:?err}"
 
   mariadb:
     image: mariadb:10.5.8
