@@ -95,7 +95,7 @@ services:
     restart: always
     container_name: ${APP_NAME:?err}-logs
     ports:
-      - $NODE_LOCAL_PORT:$NODE_DOCKER_PORT
+      - ${NODE_LOCAL_PORT}:${NODE_DOCKER_PORT}
     environment:
       DB_HOST: mongo
       DB_USER: ${MONGODB_USER}
