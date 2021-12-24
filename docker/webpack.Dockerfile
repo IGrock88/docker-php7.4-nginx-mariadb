@@ -18,7 +18,7 @@ RUN apt-get install yarn -y
 
 WORKDIR /var/www/html
 
-COPY ./www/package.json /www/babel.config.js ./www/postcss.config.js ./www/webpack.common.js ./www/webpack.dev.js ./www/webpack.prod.js ./www/assets/ ./
+COPY ./site/package.json /site/babel.config.js ./site/postcss.config.js ./site/webpack.common.js ./site/webpack.dev.js ./site/webpack.prod.js ./site/assets/ ./
 
 #RUN yarn install
 #COPY . ./

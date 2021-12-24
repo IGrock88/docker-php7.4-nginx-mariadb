@@ -7,8 +7,8 @@ RUN echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | sudo tee
 
 
 
-RUN apt-get update && apt -y install php7.4 && apt-get install -y \
-        nginx php7.4-fpm \
+RUN apt-get update && apt -y install php8.1.1 && apt-get install -y \
+        nginx php8.1.1-fpm \
         curl \
         wget \
         git \
