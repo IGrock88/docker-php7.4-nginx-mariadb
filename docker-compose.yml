@@ -66,8 +66,8 @@ services:
       - './config/nginx/snippets/:/etc/nginx/snippets/'
       - './config/nginx/conf:/etc/nginx/conf.d/'
 
-  composer_installation:
-    container_name: composer_installation
+  composer:
+    container_name: ${APP_NAME:?err}-composer
     build:
       context: .
       dockerfile: ./docker/composer.Dockerfile
