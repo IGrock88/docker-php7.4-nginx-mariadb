@@ -50,6 +50,7 @@ services:
     container_name: ${APP_NAME:?err}-php
     volumes:
       - './site/:/var/www/html'
+      - './config/php/:/usr/local/etc/php'
 
   nginx:
     image: nginx:latest

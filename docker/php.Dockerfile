@@ -27,7 +27,7 @@ RUN apt-get update && apt-get install -y \
 RUN curl --silent --show-error https://getcomposer.org/installer | php && \
     mv composer.phar /usr/local/bin/
 
-#COPY ./etc/crons/php/cronfile /etc/cron.d/maincron
+COPY ./config/php /usr/local/etc/php
 
 #RUN chmod 0644 /etc/cron.d/maincron
 
