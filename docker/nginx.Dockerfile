@@ -26,11 +26,12 @@ RUN apt-get update && apt -y install php8.1.1 && apt-get install -y \
 		libcurl4-openssl-dev \
 		libxml2-dev \
 		libmagickwand-dev \
-    && docker-php-ext-install -j$(nproc) gettext iconv mbstring mysqli pdo_mysql zip bcmath curl json opcache phar session soap sockets zip \
+    && docker-php-ext-install -j$(nproc) gettext iconv mbstring mysqli pdo_mysql zip bcmath gd curl json opcache phar session soap sockets zip \
 	&& pecl install memcached \
 	&& pecl install imagick \
 	&& docker-php-ext-enable memcached \
-	&& docker-php-ext-enable imagick
+	&& docker-php-ext-enable imagick \
+    && docker-php-ext-enable gd
 
 RUN curl --silent --show-error https://getcomposer.org/installer | php && \
     mv composer.phar /usr/local/bin/

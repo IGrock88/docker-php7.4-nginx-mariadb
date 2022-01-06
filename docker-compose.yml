@@ -3,7 +3,6 @@ services:
   webpack:
     image: node-latest
     container_name: ${APP_NAME:?err}-webpack
-    restart: 'always'
     build:
       context: .
       dockerfile: ./docker/webpack.Dockerfile
