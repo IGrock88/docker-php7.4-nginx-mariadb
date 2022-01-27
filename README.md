@@ -6,3 +6,14 @@
 5. run command "sudo docker-compose up"
 
 docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' container_name_or_id - получить ip контейнера
+
+
+# Increase size of swap file
+sudo swapoff -a
+
+sudo dd if=/dev/zero of=/swapfile bs=1G count=8
+
+sudo chmod 0600 /swapfile
+
+sudo mkswap /swapfile  # Set up a Linux swap area
+sudo swapon /swapfile  # Turn the swap on
