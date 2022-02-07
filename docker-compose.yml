@@ -1,17 +1,5 @@
 version: '3'
 services:
-  java:
-    container_name: ${APP_NAME:?err}-java
-    restart: 'always'
-    ports:
-      - 12500:11111
-    links:
-      - php
-    build:
-      context: .
-      dockerfile: ./docker/java.Dockerfile
-    volumes:
-      - ./java/logs:/var/java/app/target/logs
 
   webpack:
     container_name: ${APP_NAME:?err}-webpack
@@ -137,7 +125,6 @@ services:
 volumes:
   check_printer_data:
     external: true
-  mongo_data:
-    external: true
+
 
 
