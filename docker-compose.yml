@@ -5,8 +5,6 @@ services:
     restart: 'always'
     ports:
       - 12500:11111
-    links:
-      - php
     build:
       context: .
       dockerfile: ./docker/java.Dockerfile
