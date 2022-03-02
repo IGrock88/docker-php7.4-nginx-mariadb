@@ -13,4 +13,4 @@ COPY --from=build /var/java/app/target /var/java/app/target
 
 WORKDIR /var/java/app/target
 
-CMD ["java", "-Dfile.encoding=UTF-8", "-DapiUrl=http://nginx/", "-DdriverPath=/var/java/app/src/main/resources/libfptr10.so", "-jar", "CheckPrinter-1.0-jar-with-dependencies.jar"]
+CMD ["java", "-Dfile.encoding=UTF-8", "-DdriverPath=/var/java/app/src/main/resources/libfptr10.so", "-jar", "CheckPrinter-1.0-jar-with-dependencies.jar"]
