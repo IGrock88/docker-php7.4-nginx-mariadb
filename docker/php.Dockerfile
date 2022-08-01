@@ -1,4 +1,5 @@
-FROM php:7.4-fpm
+FROM php:8.1.1-fpm
+
 
 RUN apt-get update && apt-get install -y \
         curl \
@@ -7,6 +8,8 @@ RUN apt-get update && apt-get install -y \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
         libpng-dev \
+        libjpeg-dev \
+        libjpeg62-turbo-dev \
 		libmemcached-dev \
 		memcached \
 		zlib1g-dev \
@@ -18,7 +21,8 @@ RUN apt-get update && apt-get install -y \
 		libcurl4-openssl-dev \
 		libxml2-dev \
 		libmagickwand-dev \
-    && docker-php-ext-install -j$(nproc) gettext iconv mbstring mysqli pdo_mysql zip bcmath gd curl json opcache phar session soap sockets zip \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install -j$(nproc) gettext iconv mbstring mysqli pdo_mysql zip bcmath fileinfo curl opcache phar session soap sockets gd \
 	&& pecl install memcached \
 	&& pecl install imagick \
 	&& docker-php-ext-enable memcached \
