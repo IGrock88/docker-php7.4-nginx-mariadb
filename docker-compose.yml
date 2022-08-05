@@ -22,7 +22,7 @@ services:
       MYSQL_ROOT_PASSWORD: ${MARIA_DB_ROOT_PASSWORD:?err}
       MARIADB_DATABASE: ${MARIA_DB_NAME:?err}
     volumes:
-      - mariadb_framework:/var/lib/mysql
+      - parking:/var/lib/mysql
       #- './var/lib/mysql:/var/lib/mysql'
       #- './www:/var/www/html'
       #- /var/www/html/node_modules/
@@ -78,5 +78,5 @@ services:
 
 
 volumes:
-  mariadb_framework:
+  parking:
     external: true
