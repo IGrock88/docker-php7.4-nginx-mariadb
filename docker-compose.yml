@@ -76,7 +76,22 @@ services:
       - ./site/:/var/www/html
     command: bash -c "composer install --no-scripts --no-autoloader --no-plugins --ignore-platform-reqs && composer dump-autoload"
 
+  mailer:
+    image: imixs/exim4:1.2.6
+    container_name: ${APP_NAME:?err}-mailer
+    restart: always
+    #build:
+    #  context: .
+    environment:
+      EXIM_SMARTHOST: ${SMTP_HOST:?err}
+      EXIM_PASSWORD: ${SMTP_SERVER:?err}:${SMTP_LOGIN:?err}:${SMTP_PASSWORD:?err}
+      EXIM_ALLOWED_SENDERS: 172.20.0.0/24:127.0.0.1
+    volumes:
+      - mailer_vol:/var/log/exim4
+
 
 volumes:
   mariadb_framework:
+    external: true
+  mailer_vol:
     external: true
