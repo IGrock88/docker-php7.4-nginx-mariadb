@@ -85,7 +85,7 @@ services:
     environment:
       EXIM_SMARTHOST: ${SMTP_HOST:?err}
       EXIM_PASSWORD: ${SMTP_SERVER:?err}:${SMTP_LOGIN:?err}:${SMTP_PASSWORD:?err}
-      EXIM_ALLOWED_SENDERS: 172.20.0.0/24:127.0.0.1
+      EXIM_ALLOWED_SENDERS: ${EXIM_ALLOWED_IP:?err}
     volumes:
       - mailer_vol:/var/log/exim4
 
