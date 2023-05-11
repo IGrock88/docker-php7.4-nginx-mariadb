@@ -31,6 +31,12 @@ RUN apt-get update && apt-get install -y \
 RUN curl --silent --show-error https://getcomposer.org/installer | php && \
     mv composer.phar /usr/local/bin/
 
+RUN apt-get update && apt-get install -y gnupg2
+RUN apt-get install -y wget
+RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
+    && echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list
+RUN apt-get update && apt-get -y install google-chrome-stable
+
 #COPY ./etc/crons/php/cronfile /etc/cron.d/maincron
 
 #RUN chmod 0644 /etc/cron.d/maincron

@@ -1,4 +1,4 @@
-FROM node:15.6.0
+FROM node:16.13.0
 
 # Update
 RUN apt-get update -y
