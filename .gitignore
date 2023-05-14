@@ -15,3 +15,4 @@ yarn-error.log
 www
 /mongo
 /logs
+/backup
