@@ -10,4 +10,7 @@ services:
       dockerfile: ./docker/java.Dockerfile
     volumes:
       - ./java/logs:/var/java/app/target/logs
-
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "3"
